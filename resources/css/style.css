@@ -5,9 +5,17 @@ html {
   font-size: 16px;
 }
 
+body{
+  display: grid;
+
+
+  }
+
 .main-content {
-  position: relative;
-  top: 5.3125rem; /* To offset for fixed header. */
+   /* To offset for fixed header. */
+  background-image: url("/resources/images/banner-landingpage.jpg");
+  grid-row-start: auto;
+  grid-row-end: 2;
 }
 
 .center {
@@ -38,27 +46,53 @@ html {
 
 header {
   position: fixed;
-  width: 100%;
+  height: 5.3125rem;
   border-bottom: solid 1px #c6c1c1;
   background-color: white;
+  width: 100%;
+
 }
 
 header .content {
-  display: flex;
-  align-items: center;
-  padding: 1.875rem;
+  display: grid;
+  grid-template-columns: repeat(2,1fr) 33rem;
+  grid-template-rows: 85px;
 }
 
 header .logo {
-  flex: 1;
+  padding-left: 1.875rem;
+  grid-column-start: 1;
+  grid-column-end: 1;
+  font-size: 1.5rem;
+  font-family: Roboto;
+  color: #4a4a4a;
+  display: grid;
+  align-content: center;
+  
+}
+header nav.desktop{
+  grid-column-start: 3;
+  grid-column-end: 3;
+  display: grid;
+  align-content: center;
+  
 }
 
+
 header nav ul {
-  display: flex;
+  width: auto;
+  font-family: Roboto;
+  color: #4a4a4a;
+  line-height: 1.6px;
+
+  
+  
+  
 }
 
 nav li {
   padding-left: 3.5rem;
+  display: inline-block;
 }
 
 nav a {
@@ -92,7 +126,7 @@ header .mobile {
   }
 
   header .mobile ul {
-    display: flex;
+    
     justify-content: space-around;
     align-items: center;
     width: 100%;
@@ -113,10 +147,11 @@ header .mobile {
 /* Sign Up Section */
 
 #sign-up-section {
-  display: flex;
+  
   justify-content: flex-start;
   align-items: flex-start;
   height: 43.5rem;
+  padding-top: 175px;
 }
 
 #sign-up-cta {
@@ -210,7 +245,6 @@ header .mobile {
 /* Features Section */
 
 #features-section {
-  display: flex;
   justify-content: space-between;
   padding: 4rem 5%;
   background-color: #f3f3f3;
@@ -373,16 +407,16 @@ header .mobile {
 footer {
   background-color: #9b9b9b;
   padding: 1.5rem 2rem;
+  grid-area: 4 / 1 / 4 / 1 ;
 }
 
 footer .content {
   color: white;
-  display: flex;
   font-size: .75rem;
 }
 
 footer .copyright {
-  flex-grow: 1;
+  
 }
 
 @media only screen and (min-width: 760px) {
